@@ -41,7 +41,6 @@ public class ControladorCarga {
                 new FileChooser.ExtensionFilter("Imágenes", "*.png", "*.jpg", "*.jpeg", "*.bmp")
         );
 
-        // Permitir selección múltiple
         java.util.List<File> archivos = fileChooser.showOpenMultipleDialog(null);
 
         if (archivos != null && !archivos.isEmpty()) {
@@ -62,7 +61,6 @@ public class ControladorCarga {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/pc/vista-resultado.fxml"));
             Parent root = loader.load();
 
-            // Pasar las imágenes cargadas
             VistaResultadoController controlador = loader.getController();
             List<Image> lista = new ArrayList<>();
             for (ImageView view : vistas) {
